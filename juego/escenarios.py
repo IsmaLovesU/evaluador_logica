@@ -197,18 +197,18 @@ def _sala_4() -> Escenario:
         numero=4,
         titulo="La Sala Final: la Máquina de Funciones",
         historia=(
-            "La última puerta combina todo lo aprendido: para TODO número del 1 al 6, "
-            "¿ser primo obliga a que su 'cuadrado' (tabla de la sala) sea mayor que él mismo?"
+            "La última puerta combina todo lo aprendido: ¿EXISTE un número del 1 al 6 "
+            "que NO sea primo y que sea mayor que el valor que le asigna la máquina 'cuadrado'?"
         ),
         lenguaje=lenguaje,
         interpretacion=interp,
-        formula_texto="∀x (EsPrimo(x) → Mayor(cuadrado(x), x))",
+        formula_texto="∃x (¬EsPrimo(x) ∧ Mayor(x, cuadrado(x)))",
         glosario={
             "EsPrimo(x)": "x es un número primo",
             "Mayor(x, y)": "x es mayor que y",
             "cuadrado(x)": "el valor que la máquina asigna a x (tabla de la sala, no es x al cuadrado real)",
         },
-        pista="No descartes los números que NO son primos: para ellos la implicación ya es verdadera sin revisar nada más.",
+        pista="Los números primos quedan descartados de inmediato por el '¬EsPrimo'. Revisa los no-primos uno por uno, en orden, y compara cada uno con lo que le asigna la máquina.",
         digito="2",
     )
 
